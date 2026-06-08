@@ -250,7 +250,7 @@ export class OB11HttpServerAdapter extends IOB11NetworkAdapter<HttpServerConfig>
 
   async httpApiRequest (req: Request, res: Response, request_sse: boolean = false) {
     let payload = req.body;
-    if (req.method === 'get') {
+    if (req.method === 'GET') {
       payload = req.query;
     } else if (req.query) {
       payload = { ...req.body, ...req.query };
@@ -307,6 +307,7 @@ export class OB11HttpServerAdapter extends IOB11NetworkAdapter<HttpServerConfig>
   async reload (newConfig: HttpServerConfig) {
     const wasEnabled = this.isEnable;
     const oldPort = this.config.port;
+    const oldHost = this.config.host;
     const oldEnableWebsocket = this.config.enableWebsocket;
     this.config = newConfig;
 
@@ -318,7 +319,7 @@ export class OB11HttpServerAdapter extends IOB11NetworkAdapter<HttpServerConfig>
       return OB11NetworkReloadType.NetWorkClose;
     }
 
-    if (oldPort !== newConfig.port || oldEnableWebsocket !== newConfig.enableWebsocket) {
+    if (oldPort !== newConfig.port || oldHost !== newConfig.host || oldEnableWebsocket !== newConfig.enableWebsocket) {
       this.close();
       if (newConfig.enable) {
         this.open();

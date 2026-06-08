@@ -24,6 +24,7 @@ export const ActionName = {
 
   DelGroupAlbumMedia: 'del_group_album_media',
   SetGroupAlbumMediaLike: 'set_group_album_media_like',
+  CancelGroupAlbumMediaLike: 'cancel_group_album_media_like',
   DoGroupAlbumComment: 'do_group_album_comment',
   GetGroupAlbumMediaList: 'get_group_album_media_list',
   UploadImageToQunAlbum: 'upload_image_to_qun_album',
@@ -141,6 +142,7 @@ export const ActionName = {
   ForwardFriendSingleMsg: 'forward_friend_single_msg',
   ForwardGroupSingleMsg: 'forward_group_single_msg',
   TranslateEnWordToZn: 'translate_en2zh',
+  FetchPttText: 'fetch_ptt_text',
   SetMsgEmojiLike: 'set_msg_emoji_like',
   GoCQHTTP_SendForwardMsg: 'send_forward_msg',
   MarkPrivateMsgAsRead: 'mark_private_msg_as_read',
@@ -153,6 +155,10 @@ export const ActionName = {
   _MarkAllMsgAsRead: '_mark_all_as_read',
   GetProfileLike: 'get_profile_like',
   FetchCustomFace: 'fetch_custom_face',
+  FetchCustomFaceDetail: 'fetch_custom_face_detail',
+  AddCustomFace: 'add_custom_face',
+  DeleteCustomFace: 'delete_custom_face',
+  SetCustomFaceDesc: 'set_custom_face_desc',
   FetchEmojiLike: 'fetch_emoji_like',
   GetEmojiLikes: 'get_emoji_likes',
   SetInputStatus: 'set_input_status',
@@ -206,4 +212,6 @@ export const ActionName = {
   ReceiveOnlineFile: 'receive_online_file',
   RefuseOnlineFile: 'refuse_online_file',
   CancelOnlineFile: 'cancel_online_file',
+
+  GetGroupSignedList: 'get_group_signed_list',
 } as const;
